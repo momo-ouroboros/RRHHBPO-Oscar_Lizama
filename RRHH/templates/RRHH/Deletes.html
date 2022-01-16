@@ -1,0 +1,147 @@
+{% extends "RRHH/base.html" %}
+
+{% load static%}
+
+{% block content %}
+{% if Aread.id %}
+<br>
+<div class="row" style="display: flex;
+  justify-content: center">
+	<div class="col-md-6">
+			<div class="card card-body">
+				<p>Esta seguro que desea eliminar el registro "{{Aread}}"?</p>
+				<form method="POST" action="{% url 'Areas_d' Aread.id %}">
+				{% csrf_token %}
+				<a class="btn btn-warning"href="{% url 'Area' %}">Cancelar</a>	
+				<input class="btn btn-danger"type="submit" name="Confirm" placeholder="Eliminar">
+
+				</form>
+			</div>
+		</div>
+	</div>	
+{% endif %}
+
+{% if Areade.id %}
+<br>
+<div class="row" style="display: flex;
+  justify-content: center">
+	<div class="col-md-6">
+			<div class="card card-body">
+				<p>El registro:"{{Areade}}" no puede ser eliminado,ya que se encuentra enlazado a otro registro</p>
+				<form method="POST" action="{% url 'Areas_d' Areade.id %}">
+				{% csrf_token %}
+				<a class="btn btn-warning"href="{% url 'Area' %}">Cancelar</a>	
+
+				</form>
+			</div>
+		</div>
+	</div>	
+{% endif %}
+
+{% if SubAr.id %}
+<br>
+<div class="row" style="display: flex;
+  justify-content: center">
+	<div class="col-md-6">
+			<div class="card card-body">
+				<p>Esta seguro que desea eliminar el registro "{{SubAr}}"?</p>
+				<form method="POST" action="{% url 'Sareas_d' SubAr.id %}">
+				{% csrf_token %}
+				<a class="btn btn-warning"href="{% url 'Sub_Area' %}">Cancelar</a>	
+				<input class="btn btn-danger"type="submit" name="Confirm" placeholder="Eliminar">
+
+				</form>
+			</div>
+		</div>
+	</div>	
+{% endif %}
+
+{% if SubAre.id %}
+<br>
+<div class="row" style="display: flex;
+  justify-content: center">
+	<div class="col-md-6">
+			<div class="card card-body">
+				<p>El registro:"{{SubAre}}" no puede ser eliminado,ya que se encuentra enlazado a otro registro.</p>
+				<form method="POST" action="{% url 'Sareas_d' SubAre.id %}">
+				{% csrf_token %}
+				<a class="btn btn-warning"href="{% url 'Sub_Area' %}">Cancelar</a>
+				</form>
+			</div>
+		</div>
+	</div>	
+{% endif %}
+
+{% if Doc.id %}
+<br>
+<div class="row" style="display: flex;
+  justify-content: center">
+	<div class="col-md-6">
+			<div class="card card-body">
+				<p>Esta seguro que desea eliminar el registro "{{Doc}}"?</p>
+				<form method="POST" action="{% url 'Documentos_d' Doc.id %}">
+				{% csrf_token %}
+				<a class="btn btn-warning"href="{% url 'TipoDoc' %}">Cancelar</a>	
+				<input class="btn btn-danger"type="submit" name="Confirm" placeholder="Eliminar">
+
+				</form>
+			</div>
+		</div>
+	</div>	
+{% endif %}
+
+{% if Doce.id %}
+<br>
+<div class="row" style="display: flex;
+  justify-content: center">
+	<div class="col-md-6">
+			<div class="card card-body">
+				<p>El registro:"{{Doce}}" no puede ser eliminado,ya que se encuentra enlazado a otro registro.</p>
+				<form method="POST" action="{% url 'Documentos_d' Doce.id %}">
+				{% csrf_token %}
+				<a class="btn btn-warning"href="{% url 'TipoDoc' %}">Cancelar</a>
+				</form>
+			</div>
+		</div>
+	</div>	
+{% endif %}
+
+{% if Empleado.id %}
+<br>
+<div class="row" style="display: flex;
+  justify-content: center">
+	<div class="col-md-6">
+			<div class="card card-body">
+				<p>Esta seguro que desea eliminar el registro "{{Empleado.Empleadonom}} 
+				{{Empleado.Empleadoape}}"?</p>
+				<form method="POST" action="{% url 'Empleados_d' Empleado.id %}">
+				{% csrf_token %}
+				<a class="btn btn-warning"href="{% url 'Empleado' %}">Cancelar</a>	
+				<input class="btn btn-danger"type="submit" name="Confirm" placeholder="Eliminar">
+
+				</form>
+			</div>
+		</div>
+	</div>	
+{% endif %}
+
+{% if Empleadoe.id %}
+<br>
+<div class="row" style="display: flex;
+  justify-content: center">
+	<div class="col-md-6">
+			<div class="card card-body">
+				<p>Esta seguro que desea eliminar el registro "{{Empleado.Empleadonom}} 
+				{{Empleado.Empleadoape}}"?</p>
+				<form method="POST" action="{% url 'Documentos_d' Empleadoe.id %}">
+				{% csrf_token %}
+				<a class="btn btn-warning"href="{% url 'Empleado' %}">Cancelar</a>
+				</form>
+			</div>
+		</div>
+	</div>	
+{% endif %}
+
+
+
+{% endblock %}
